@@ -1,0 +1,7 @@
+pyrom is a Python library for extracting metadata from ROM images.
+It was developed as a helper library for http://launchpad.net/netplay-lobby
+
+Currently supported image formats:
+
+ * SNES: uninterleaved and interleaved LoROM/HiROM)
+ * Genesis: RAW, SMD and MD
