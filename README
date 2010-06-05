@@ -3,5 +3,6 @@ It was developed as a helper library for http://launchpad.net/netplay-lobby
 
 Currently supported image formats:
 
- * SNES: uninterleaved and interleaved LoROM/HiROM)
+ * SNES: headerless/headered/uninterleaved/interleaved LoROM/HiROM
  * Genesis: RAW, SMD and MD
+ * NES: iNES

@@ -1,8 +1,15 @@
 def sub(arr, start, len):
     return arr[start:(start+len)]
 
-def uniq(iter):
-    return (x for x in set(iter))
+def uniq(seq):
+    seen = set()
+    result = []
+    for e in seq:
+        if e in seen: continue
+        seen.add(e)
+        result.append(e)
+
+    return result
 
 def unpack(str):
     return long(str.encode('hex'), 16)
@@ -12,9 +19,3 @@ def odd(upto):
 
 def even(upto):
     return range(0, upto + 1, 2)
-
-def unispace(str):
-    return ' '.join(str.split())
-
-def istrip(str):
-    return str.replace(' ', '')

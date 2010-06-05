@@ -1,23 +1,6 @@
-import os, auxiliaries
-from parsers import genesis, snes
+from parsers import parse as _parse
 
-_parsers = {'bin': genesis,
-            'smd': genesis,
-            'md': genesis,
-            'smc': snes
-            }
+def read(path):
+    with open(path) as f:
+        return _parse(f)
 
-def parse(path):
-    dontcare, ext = os.path.splitext(path)
-    first_parser = _parsers.get(ext.lower(), None)
-    parser_list = _parsers.values()
-
-    if first_parser:
-        parser_list.insert(0, first_parser)
-
-    for p in auxiliaries.uniq(parser_list):
-        r = p.parse(path)
-        if r:
-            return r
-
-    raise ValueError('Path is not a support ROM type')
