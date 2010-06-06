@@ -17,6 +17,7 @@ def parse(data):
     ram_size = 8*num_ram_banks
 
     return _ROM(name,
+                'NES',
                 rom_size=rom_size,
                 ram_size=ram_size)
                     

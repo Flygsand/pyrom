@@ -1,4 +1,4 @@
-import os, sys
+import os, hashlib
 from pyrom.auxiliaries import uniq as _uniq
 from . import genesis, snes, nes
 
@@ -29,6 +29,7 @@ def parse(f):
             rom = p.parse(data)
             if not rom.name:
                 rom.name = os.path.basename(f.name)
+            rom.hsh = hashlib.sha1(data).hexdigest()
             return rom
         except ValueError:
             pass

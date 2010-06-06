@@ -43,6 +43,7 @@ def parse(data):
     ram_end = _unpack(_sub(data, 0x1b8, 4))
     country = _sub(data, 0x1f0, 16).strip()
     return _ROM(name,
+                'Genesis',
                 rom_size=(rom_end-rom_start+1)/1024,
                 ram_size=(ram_end-ram_start+1)/1024,
                 country=country,

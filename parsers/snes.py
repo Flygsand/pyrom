@@ -61,6 +61,7 @@ def parse(data):
     country, region = _country_and_region(ccode)
     version = '1.%d' % ord(data[hdr+0x1b])        
     return _ROM(name,
+                'SNES',
                 rom_size=rom_size,
                 ram_size=ram_size,
                 country=country,
